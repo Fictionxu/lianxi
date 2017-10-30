@@ -23,7 +23,9 @@ public class Assignment {
             System.out.println(" is the first name.");
         }
         else
-        System.out.println("Error: The first name was not accepted. ");
+        {
+            System.out.println("Error: The first name was not accepted. ");
+        }
         System.out.println("Please input the second name:");
         name2=reader.nextLine();
         char a2 = name2.charAt(0);
@@ -33,7 +35,9 @@ public class Assignment {
             System.out.println(" is the second name.");
         }
         else
-        System.out.println("Error: The second name was not accepted. ");
+        {
+            System.out.println("Error: The second name was not accepted. ");
+        }
         System.out.println("Please input the third name:");
         name3=reader.nextLine();
         char a3 = name3.charAt(0);
@@ -43,11 +47,60 @@ public class Assignment {
             System.out.println(" is the third name.");
         }
         else
-        System.out.println("Error: The third name was not accepted. ");            
+        {
+            System.out.println("Error: The third name was not accepted. ");
+        }            
         System.out.println("The names in alphabetical order are:");
+        if(a1>=a2&&a1>=a3)
+        {   
+            if(a3>=a2)
+            {
+                String t1=name3;
+                name3=name2;
+                name2=t1;
+            }
+            
+        }
+        if(a2>=a1&&a2>=a3)
+        {   String t1=name1;
+            String t2=name2;
+            String t3=name3;
+            name2=t1;
+            name1=t2;
+            if(a3>=a1)
+            {
+                name3=t1;
+                name2=t3;
+            }
+            else
+            {
+                name3=t3;
+                name2=t2;
+            }
+            
+        }
+        if(a3>=a1&&a3>=a2)
+        {   String t1=name1;
+            String t2=name2;
+            String t3=name3;
+            name3=t1;
+            name1=t3;
+            if(a1>=a2)
+            {
+                name2=t1;
+                name3=t2;
+            }
+            else
+            {
+                name3=t1;
+                name2=t2;
+            }
+            
+        }
         if((a1>='a'&&a1<='z')||(a1>='A'&&a1<='Z'))
         {  
             System.out.print("\"");
+             if(((a2>='a'&&a2<='z')||(a2>='A'&&a2<='Z')))
             System.out.print(name1);
             System.out.println("\"");
         }
